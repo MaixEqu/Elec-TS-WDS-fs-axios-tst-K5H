@@ -1,0 +1,67 @@
+{
+  "name": "elec-webpack-ts-fs-k5f",
+  "version": "0.0.2",
+  "description": "Electron Webpack Typescript tests",
+  "main": "main.js",
+  "author": "maix <maix@gmail.com>",
+  "homepage": ".",
+  "private": true,
+  "keywords": [
+    "axios",
+    "electron",
+    "electron-reload",
+    "electron-builder",
+    "typescript",
+    "webpack",
+    "webpack-dev-server"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.19.2"
+  },
+  "devDependencies": {
+    "@types/axios": "^0.14.0",
+    "@types/electron": "^1.6.10",
+    "@types/node": "^14.0.1",
+    "@types/webpack": "^4.41.13",
+    "electron": "^8.3.0",
+    "electron-builder": "^22.6.0",
+    "electron-reload": "^1.5.0",
+    "ts-loader": "^7.0.4",
+    "typescript": "^3.9.2",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "// deb": "deb",
+  "build": {
+    "appId": "com.maixtest.app",
+    "productName": "MxTSApp5-K5F",
+    "directories": {
+      "app": "./app",
+      "output": "./_builds"
+    },
+    "linux": {
+      "target": [
+        "AppImage"
+      ]
+    }
+  },
+  "scripts": {
+    "b": "webpack-dev-server --open --mode development",
+    "c": "webpack --mode development",
+    "t": "tsc .",
+    "w": "webpack --mode development --watch",
+    "w_": "yarn w &",
+    "e": "NODE_DEV=Maix electron --no-sandbox ./app/main.js",
+    "ee": "yarn c && yarn w_ && yarn e",
+    "r": "./_builds/MxTSApp5-K5F-0.0.2.AppImage --no-sandbox",
+    "rasp": "electron-builder --linux --armv7l",
+    "raspx": "electron-builder --linux deb --armv7l",
+    "win": "electron-builder --win --x64",
+    "x": "electron-builder --linux --x64",
+    "xx": "electron-builder --linux deb --x64",
+    "xxz": "electron-builder --linux deb tar.xz --x64",
+    "z": "electron-builder"
+  }
+}
